@@ -1,0 +1,13 @@
+b{
+    color: red;
+    margin-bottom: 5px;
+}
+
+input[type="text"], textarea{
+    width: 40%;
+    margin-bottom: 10px;
+}
+
+input[type="checkbox"]{
+    margin-right: 5px;
+}
