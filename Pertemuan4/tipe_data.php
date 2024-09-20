@@ -12,4 +12,17 @@
     echo "Variabel e: {$e} <br>";
 
     var_dump($e);
+
+    $nilaiMatematika = 5.1;
+    $nilaiIPA = 6.7;
+    $nilaiBIndo = 9.3;
+
+    $rataRata = ($nilaiMatematika + $nilaiIPA + $nilaiBIndo) / 3;
+
+    echo "Matematika: {$nilaiMatematika} <br>";
+    echo "IPA: {$nilaiIPA} <br>";
+    echo "Bahasa Indonesia: {$nilaiBIndo} <br>";
+    echo "Rata-rata: {$rataRata} <br>";
+
+    var_dump($rataRata);
 ?>
