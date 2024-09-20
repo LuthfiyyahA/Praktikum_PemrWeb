@@ -15,5 +15,14 @@
     echo "> Perkalian   : $a * $b = $hasilKali<br>";
     echo "> Pembagian   : $a / $b = $hasilBagi<br>";
     echo "> Sisa Bagi   : $a % $b = $sisaBagi<br>";
-    echo "> Perpangkatan: $a ^ $b = $pangkat<br>";
+    echo "> Perpangkatan: $a ^ $b = $pangkat<br><br>";
+
+    $hasilSama = $a == $b;
+    $hasilTidakSama = $a != $b;
+    $hasilLebihKecil = $a < $b;
+    $hasilLebihBesar = $a > $b;
+    $hasilLebihKecilSama = $a <= $b;
+    $hasilLebihBesarSama = $a >= $b;
+
+    
 ?>
