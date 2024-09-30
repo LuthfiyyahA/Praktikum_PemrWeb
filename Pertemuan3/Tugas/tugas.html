@@ -6,37 +6,39 @@
     </head>
 
     <body>
-        <form action="#" method="post">
+        <p>
+            <img src="Identity Formulir.png" style="width: 100%; height: auto;">
+        </p>
+        
+        <form name="myForm" action="#" method="post">
             <b style="padding-right: 300px;">Nama</b>
-            <input type="text" name="var1" size="30" value=""> <br>
+            <input type="text" name="nama" size="30" value=""> <br>
         
             <b style="padding-right: 290px;">Alamat</b>
-            <textarea name="Alamat" cols="40" rows="5" ></textarea><br>
+            <textarea name="alamat" cols="40" rows="5" ></textarea><br>
         
             <b style="padding-right: 244px;">Tanggal Lahir</b>
             <input type="date" name="var2" id="tgl"><br>
         
             <b style="padding-right: 241px;">Jenis Kelamin</b>
-            <input type="checkbox" name="var3" id="jk">Laki-Laki
+            <input type="radio" name="var3" id="jk1" value="Laki-Laki">Laki-Laki<br>
             <b style="padding-right: 330px; color: white;">_</b>
-            <input type="checkbox" name="var3" id="jk">Wanita<br>
+            <input type="radio" name="var3" id="jk2" value="Wanita">Wanita<br>
         
             <b style="padding-right: 292px;">Hobby</b>
-            <input type="checkbox" name="var4" id="hobi">Berenang
-            <input type="checkbox" name="var4" id="hobi">Berlari
-            <input type="checkbox" name="var4" id="hobi">Lain-lain<br>
+            <input type="checkbox" name="var4" id="hobi1" value="Berenang">Berenang
+            <input type="checkbox" name="var4" id="hobi2" value="Berlari">Berlari
+            <input type="checkbox" name="var4" id="hobi3" value="Lain-lain">Lain-lain<br>
         
             <b style="padding-right: 268px;">Pekerjaan</b>
-            <input type="checkbox" name="var5" id="kerja">Swasta
-            <input type="checkbox" name="var5" id="kerja">PNS
-            <input type="checkbox" name="var5" id="kerja">Lain-lain<br>
+            <input type="radio" name="var5" id="kerja1" value="Swasta">Swasta
+            <input type="radio" name="var5" id="kerja2" value="PNS">PNS
+            <input type="radio" name="var5" id="kerja3" value="Lain-lain">Lain-lain<br>
             
             <input type="checkbox" name="var6" id="cek"><b>Check Jika anda akan mengirimkan data ini</b><br>
-            <input type="submit" value="Cek!">
+            <input type="button" onclick="validasi()" value="Cek!"></button>
         </form>
 
-        <script>
-            
-        </script>
+        <script src="alert.js"></script>
     </body>
 </html>
