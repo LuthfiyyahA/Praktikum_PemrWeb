@@ -22,4 +22,38 @@ function tampilkanAngka(int $jumlah, int $indeks = 1){
 }
 
 tampilkanAngka(20);
+
+$menu = [
+    [
+        'nama' => 'Beranda'
+    ],
+    [
+        'nama' => 'Berita',
+        'subMenu' => [
+            [
+                'nama' => 'wisata',
+                'subMenu' => [
+                    [
+                        'nama' => 'Pantai'
+                    ],
+                    [
+                        'nama' => 'Gunung'
+                    ]
+                ]
+            ],
+            [
+                'nama' => 'Kuliner'
+            ],
+            [
+                'nama' => 'Hiburan'
+            ]
+        ]
+    ],
+    [
+        'nama' => 'Tentang'
+    ],
+    [
+        'nama' => 'Kontak'
+    ]
+]
 ?>
