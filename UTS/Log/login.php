@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['pass'];
 
-    $stmt = $conn->prepare("SELECT userID, email FROM pengguna WHERE email = ? AND pass = ?");
+    $stmt = $koneksi->prepare("SELECT userID, email FROM pengguna WHERE email = ? AND pass = ?");
     $stmt->bind_param("ss", $email, $password);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-$conn->close();
+$koneksi->close();
 ?>
 <!DOCTYPE html>
 <html>

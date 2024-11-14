@@ -5,7 +5,7 @@ session_start();
 if (isset($_GET['noteID'])) {
     $noteID = $_GET['noteID'];
 
-    $stmt = $conn->prepare("SELECT * FROM catatan WHERE noteID = ?");
+    $stmt = $koneksi->prepare("SELECT * FROM catatan WHERE noteID = ?");
     $stmt->bind_param("i", $noteID);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -19,7 +19,7 @@ if (isset($_GET['noteID'])) {
 
 $userID = $_SESSION['userID'];
 $userQuery = "SELECT nama FROM pengguna WHERE userID = '$userID'";
-$userResult = $conn->query($userQuery);
+$userResult = $koneksi->query($userQuery);
 
 if ($userResult && $userResult->num_rows > 0) {
     $userData = $userResult->fetch_assoc();
@@ -34,7 +34,7 @@ if (isset($_POST['edit'])) {
     $noteID = $_GET['noteID'];
 
     if (!empty($judul) && !empty($content)) {
-        $stmt = $conn->prepare("UPDATE catatan SET judul = ?, content = ? WHERE noteID = ?");
+        $stmt = $koneksi->prepare("UPDATE catatan SET judul = ?, content = ? WHERE noteID = ?");
         $stmt->bind_param("ssi", $judul, $content, $noteID);
 
         if ($stmt->execute()) {

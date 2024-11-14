@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_SESSION['userID']) && !empty($_SESSION['userID'])) {
         $userID = $_SESSION['userID'];
 
-        $stmt = $conn->prepare("INSERT INTO catatan (userID, judul, content) VALUES(?, ?, ?)");
+        $stmt = $koneksi->prepare("INSERT INTO catatan (userID, judul, content) VALUES(?, ?, ?)");
         $stmt->bind_param("iss", $userID,  $judul, $content); // Bind parameters
         
         if ($stmt->execute()) {

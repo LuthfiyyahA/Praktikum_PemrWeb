@@ -10,8 +10,10 @@ if (!isset($_SESSION['pengguna'])) {
 if (isset($_GET['noteID'])) {
     $noteID = $_GET['noteID'];
 
-    $stmt = $conn->prepare("SELECT * FROM catatan WHERE noteID = ?");
+    $stmt = $koneksi->prepare("SELECT * FROM catatan WHERE noteID = ?");
     $stmt->bind_param("i", $noteID);
+    var_dump($stmt);
+    die();
     $stmt->execute();
     $result = $stmt->get_result();
     $row = $result->fetch_assoc();
@@ -24,7 +26,7 @@ if (isset($_GET['noteID'])) {
 
 $userID = $_SESSION['userID'];
 $userQuery = "SELECT nama FROM pengguna WHERE userID = '$userID'";
-$userResult = $conn->query($userQuery);
+$userResult = $koneksi->query($userQuery);
 
 if ($userResult && $userResult->num_rows > 0) {
     $userData = $userResult->fetch_assoc();
@@ -33,7 +35,7 @@ if ($userResult && $userResult->num_rows > 0) {
     $userName = "Pengguna";
 }
 
-$conn->close();
+$koneksi->close();
 ?>
 
 <!DOCTYPE html>

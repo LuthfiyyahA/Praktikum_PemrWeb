@@ -10,7 +10,7 @@ if (!isset($_SESSION['userID'])) {
 
 $userID = $_SESSION['userID'];
 $userQuery = "SELECT nama FROM pengguna WHERE userID = '$userID'";
-$userResult = $conn->query($userQuery);
+$userResult = $koneksi->query($userQuery);
 
 if ($userResult && $userResult->num_rows > 0) {
     $userData = $userResult->fetch_assoc();
@@ -20,7 +20,7 @@ if ($userResult && $userResult->num_rows > 0) {
 }
 
 $query = "SELECT * FROM catatan WHERE userID = '$userID'";
-$result = $conn->query($query);
+$result = $koneksi->query($query);
 
 $notes = [];
 if ($result && $result->num_rows > 0) {

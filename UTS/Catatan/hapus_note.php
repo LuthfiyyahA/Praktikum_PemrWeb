@@ -4,7 +4,7 @@ session_start();
 
 $userID = $_SESSION['userID'];
 $userQuery = "SELECT nama FROM pengguna WHERE userID = ?";
-$stmt = $conn->prepare($userQuery);
+$stmt = $koneksi->prepare($userQuery);
 $stmt->bind_param('i', $userID);
 $stmt->execute();
 $userResult = $stmt->get_result();
@@ -19,7 +19,7 @@ if ($userResult && $userResult->num_rows > 0) {
 if (isset ($_GET['judul'])) {
     $judul = $_GET['judul'];
 
-    $query = $conn->prepare("DELETE FROM catatan WHERE judul = ?");
+    $query = $koneksi->prepare("DELETE FROM catatan WHERE judul = ?");
     $query->bind_param('s', $judul); 
     $query->execute();
 
@@ -31,7 +31,7 @@ if (isset ($_GET['judul'])) {
     }
     $query->close();
 }
-$conn->close();
+$koneksi->close();
 ?>
 
 <!DOCTYPE html>

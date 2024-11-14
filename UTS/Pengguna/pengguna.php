@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['pass'];
 
-    $checkEmail = $conn->prepare("SELECT * FROM pengguna WHERE email = ?");
+    $checkEmail = $koneksi->prepare("SELECT * FROM pengguna WHERE email = ?");
     $checkEmail->bind_param("s", $email);
     $checkEmail->execute();
     $result = $checkEmail->get_result();
@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 window.location.href = 'registrasi.php';
              </script>";
     } else {
-        $stmt = $conn->prepare("INSERT INTO pengguna (nama, email, pass) VALUES(?, ?, ?)");
+        $stmt = $koneksi->prepare("INSERT INTO pengguna (nama, email, pass) VALUES(?, ?, ?)");
         $stmt->bind_param("sss", $nama, $email, $password);
         
         if ($stmt->execute()) {
@@ -36,5 +36,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     $checkEmail->close();
 }
-$conn->close();
+$koneksi->close();
 ?>

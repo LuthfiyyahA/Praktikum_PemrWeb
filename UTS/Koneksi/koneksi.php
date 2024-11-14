@@ -4,9 +4,9 @@ $username = "root";
 $password = "";
 $dbname = "notes";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$koneksi = new mysqli($servername, $username, $password, $dbname);
 
-if ($conn->connect_error) {
-    die("Koneksi gagal: " . $conn->connect_error);
+if ($koneksi->connect_error) {
+    die("Koneksi gagal: " . $koneksi->connect_error);
 }
 ?>
